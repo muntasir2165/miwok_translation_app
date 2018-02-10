@@ -12,6 +12,14 @@
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"/>
 
+    <Button
+        android:id="@+id/miwok_word_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"/>
+
     <LinearLayout
         android:id="@+id/list_item"
         android:layout_width="match_parent"

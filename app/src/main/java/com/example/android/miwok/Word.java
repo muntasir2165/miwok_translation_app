@@ -12,23 +12,13 @@ public class Word {
     // Default (in this case English) word
     private String mDefaultTranslation;
 
-    // Associated image's resource id
+    // Associated image resource id
     private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    /**
-     * Constructs a new Word with Miwok and default translations
-     *
-     * @param defaultTranslation the default transation of a word
-     *
-     * @param miwokTranslation the Miwok translation of a word
-     *
-     */
-    public Word(String defaultTranslation, String miwokTranslation) {
-        this.mDefaultTranslation = defaultTranslation;
-        this.mMiwokTranslation = miwokTranslation;
-    }
+    // Associated audio resource id
+    private int mAudioResourceId;
 
     /**
      * Constructs a new Word with Miwok and default translations and an associated image resource id
@@ -37,13 +27,32 @@ public class Word {
      *
      * @param miwokTranslation the Miwok translation of a word
      *
-     * @param imageResourceId the word's associated image resource id
+     * @param audioResourceId the word's associated audio resource id
      *
      */
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
+        this.mDefaultTranslation = defaultTranslation;
+        this.mMiwokTranslation = miwokTranslation;
+        this.mAudioResourceId = audioResourceId;
+    }
+
+    /**
+     * Constructs a new Word with Miwok and default translations and associated image and audio resource ids
+     *
+     * @param defaultTranslation the default transation of a word
+     *
+     * @param miwokTranslation the Miwok translation of a word
+     *
+     * @param imageResourceId the word's associated image resource id
+     *
+     * @param audioResourceId the word's associated audio resource id
+     *
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         this.mDefaultTranslation = defaultTranslation;
         this.mMiwokTranslation = miwokTranslation;
         this.mImageResourceId = imageResourceId;
+        this.mAudioResourceId = audioResourceId;
     }
 
 
@@ -76,5 +85,27 @@ public class Word {
 
     public boolean hasImage() {
         return mImageResourceId != -1;
+    }
+
+    /**
+     * Gets the associated audio resource id
+     *
+     * @return the audio resource id.
+     */
+    public int getAudioResourceId() {
+        return mAudioResourceId;
+    }
+
+    /**
+     * Returns the string representation of the {@link Word} object.
+     */
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mAudioResourceId=" + mAudioResourceId +
+                '}';
     }
 }
