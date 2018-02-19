@@ -29,10 +29,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:label="@string/category_numbers" android:name=".NumbersActivity" />
-        <activity android:label="@string/category_colors" android:name=".ColorsActivity" />
-        <activity android:label="@string/category_family" android:name=".FamilyActivity" />
-        <activity android:label="@string/category_phrases" android:name=".PhrasesActivity"></activity>
+        <activity android:label="@string/category_numbers" android:name=".NumbersActivity" android:parentActivityName=".MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/category_colors" android:name=".ColorsActivity" android:parentActivityName=".MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/category_family" android:name=".FamilyActivity" android:parentActivityName=".MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/category_phrases" android:name=".PhrasesActivity" android:parentActivityName=".MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
